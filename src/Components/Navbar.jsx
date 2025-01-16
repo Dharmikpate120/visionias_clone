@@ -77,10 +77,10 @@ const Navbar = () => {
     <nav className="bg-white py-4 shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          
           <div className="flex items-center space-x-2">
             <Compass className="h-8 w-8 text-gray-800" />
-            <span className="text-gray-800 text-xl font-bold">TravelLens</span>
+            <span className="text-gray-800 text-xl font-bold">VisionIas</span>
           </div>
 
           {/* Mobile Menu Button */}
