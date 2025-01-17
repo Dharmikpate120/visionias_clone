@@ -1,14 +1,25 @@
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
+import { BrowserRouter } from 'react-router-dom'
+
 
 function App() {
   return (
     <>
-      <div className="min-h-screen bg-main1 text-light6">
+      <BrowserRouter>
         <Navbar />
-        <Home />
-      </div>
+        <div className="min-h-screen bg-white">
+          <Routes>
+
+
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/publication" element={<PublicKeyCredential />}></Route>
+
+          </Routes>
+        </div>
+      </BrowserRouter>
     </>
   );
 }
