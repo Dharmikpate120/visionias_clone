@@ -58,13 +58,13 @@ const ImageCarousel = () => {
       {/* Navigation Arrows */}
       <button
         onClick={goToPrevious}
-        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-1.5 sm:p-2 rounded-full transition-colors shadow-md"
+        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-main1 hover:bg-main3 text-light6 p-1.5 sm:p-2 rounded-full transition-colors shadow-md"
       >
         <ChevronLeft size={20} className="sm:w-6 sm:h-6" />
       </button>
       <button
         onClick={goToNext}
-        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-1.5 sm:p-2 rounded-full transition-colors shadow-md"
+        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-main1 hover:bg-main3 text-light6 p-1.5 sm:p-2 rounded-full transition-colors shadow-md"
       >
         <ChevronRight size={20} className="sm:w-6 sm:h-6" />
       </button>

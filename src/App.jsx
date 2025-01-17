@@ -1,4 +1,3 @@
-
 import "./App.css";
 import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
@@ -6,9 +5,9 @@ import Home from "./Pages/Home";
 function App() {
   return (
     <>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-main1 text-light6">
         <Navbar />
-        <Home/>
+        <Home />
       </div>
     </>
   );
