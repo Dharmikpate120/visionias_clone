@@ -61,20 +61,27 @@ function Home() {
         <div className="w-[90%] sm:px-10 sm:pt-5">
           <h1 className="text-3xl font-bold mb-4">Live And Latest Videos</h1>
           <div className="space-y-4">
+
             <iframe
               className="h-[15rem] sm:h-[18rem] lg:h-[15rem]"
               width="100%"
-              src="https://www.youtube.com/embed/example1"
+              src="https://www.youtube.com/embed/u4F4-yetH9w?si=ww9tsDBna57h_Fav"
+              title="YouTube video player"
               frameborder="0"
-              allowfullscreen
-            ></iframe>
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+
             <iframe
               className="h-[15rem] sm:h-[18rem] lg:h-[15rem]"
               width="100%"
-              src="https://www.youtube.com/embed/example2"
+              src="https://www.youtube.com/embed/u4F4-yetH9w?si=ww9tsDBna57h_Fav"
+              title="YouTube video player"
               frameborder="0"
-              allowfullscreen
-            ></iframe>
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+            
           </div>
         </div>
       </div>
@@ -165,7 +172,7 @@ function Home() {
           </div>
         </section>
       </div>
-      
+
       <ClassRoom />
     </>
   )
