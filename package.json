@@ -15,11 +15,8 @@
     "postcss": "^8.5.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-<<<<<<< HEAD
-    "tailwind-scrollbar": "^3.1.0"
-=======
+    "tailwind-scrollbar": "^3.1.0",
     "react-router-dom": "^7.1.2"
->>>>>>> f52bb9d9cc4952812b50545cd54534fa33236794
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

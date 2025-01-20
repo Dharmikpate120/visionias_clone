@@ -10,7 +10,7 @@ function App() {
     <>
       <BrowserRouter>
         <Navbar />
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-main1 text-light6">
           <Routes>
 
 
