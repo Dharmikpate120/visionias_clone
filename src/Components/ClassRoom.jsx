@@ -63,9 +63,12 @@ export default function Temp() {
       </h1>
       <div className="flex items-center justify-center">
         <div className="grid grid-cols-1 gap-x-9 gap-y-11 sm:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 w-[70%]">
-          {classrooms.map((rooms) => {
+          {classrooms.map((rooms, index) => {
             return (
-              <div className="flex justify-center flex-col gap-2 max-w-3xl p-6  bg-main3  shadow  dark:border-gray-300 min-h-full">
+              <div
+                key={index}
+                className="flex justify-center flex-col gap-2 max-w-3xl p-6  bg-main3  shadow  dark:border-gray-300 min-h-full"
+              >
                 <div className=" flex justify-center">
                   <h5 className=" flex items-center justify-center mb-2 text-2xl font-bold tracking-tight text-light1    ">
                     {rooms.course}
@@ -120,8 +123,12 @@ export default function Temp() {
                     Batch Dates
                   </p>
                   <div className="grid grid-cols-2 grid-flow-row mt-1">
-                    {rooms.batchDates.map((date) => {
-                      return <p className="text-sm text-light1">{date}</p>;
+                    {rooms.batchDates.map((date, index) => {
+                      return (
+                        <p key={index} className="text-sm text-light1">
+                          {date}
+                        </p>
+                      );
                     })}
                   </div>
                 </div>

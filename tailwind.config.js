@@ -2,6 +2,10 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      boxShadow: {
+        "custom-light": "0 2px 5px -3px rgba(256, 256, 256, 1)",
+        "custom-big-light": "0 0px 20px -8px rgba(256, 256, 256, 1)",
+      },
       backgroundColor: {
         main1: "#1e201e",
         main2: "#333533",

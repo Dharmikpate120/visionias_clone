@@ -9,51 +9,64 @@ import {
   Menu,
   X,
 } from "lucide-react";
+import logo from "../assets/images/logo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [dropdownStates, setDropdownStates] = useState([]);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const dropdowns = {
-    destinations: {
-      label: "Destinations",
-      links: [
-        { title: "Mountains", href: "#" },
-        { title: "Beaches", href: "#" },
-        { title: "Forests", href: "#" },
-        { title: "Deserts", href: "#" },
-        { title: "Cities", href: "#" },
-      ],
-    },
-    activities: {
-      label: "Activities",
-      links: [
-        { title: "Hiking", href: "#" },
-        { title: "Photography", href: "#" },
-        { title: "Camping", href: "#" },
-        { title: "Swimming", href: "#" },
-      ],
-    },
-    guides: {
-      label: "Travel Guides",
-      links: [
-        { title: "Popular Routes", href: "#" },
-        { title: "Season Guide", href: "#" },
-        { title: "Travel Tips", href: "#" },
-        { title: "Local Customs", href: "#" },
-      ],
-    },
-    services: {
-      label: "Services",
-      links: [
-        { title: "Transportation", href: "#" },
-        { title: "Accommodation", href: "#" },
-        { title: "Tour Packages", href: "#" },
-        { title: "Equipment Rental", href: "#" },
-      ],
-    },
+    // destinations: {
+    //   label: "Destinations",
+    //   links: [
+    //     { title: "Mountains", href: "#" },
+    //     { title: "Beaches", href: "#" },
+    //     { title: "Forests", href: "#" },
+    //     { title: "Deserts", href: "#" },
+    //     { title: "Cities", href: "#" },
+    //   ],
+    // },
+    // activities: {
+    //   label: "Activities",
+    //   links: [
+    //     { title: "Hiking", href: "#" },
+    //     { title: "Photography", href: "#" },
+    //     { title: "Camping", href: "#" },
+    //     { title: "Swimming", href: "#" },
+    //   ],
+    // },
+    // guides: {
+    //   label: "Travel Guides",
+    //   links: [
+    //     { title: "Popular Routes", href: "#" },
+    //     { title: "Season Guide", href: "#" },
+    //     { title: "Travel Tips", href: "#" },
+    //     { title: "Local Customs", href: "#" },
+    //   ],
+    // },
+    // services: {
+    //   label: "Services",
+    //   links: [
+    //     { title: "Transportation", href: "#" },
+    //     { title: "Accommodation", href: "#" },
+    //     { title: "Tour Packages", href: "#" },
+    //     { title: "Equipment Rental", href: "#" },
+    //   ],
+    // },
   };
-
+  const NavLinks = {
+    Home: "/",
+    "About Us": "/#about-us",
+    Publication: "/publication",
+    Megazines: "/megazines",
+    Academy: "/academy",
+    "digital Application": "/digital-application",
+    Events: "/events",
+    Blogs: "/blogs",
+    Career: "/career",
+    "Contact-Us": "/contact-us",
+  };
   const handleMouseEnter = (key) => {
     setDropdownStates((prev) => ({ ...prev, [key]: true }));
   };
@@ -74,18 +87,17 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-main1 py-4 shadow-md">
+    <nav className="bg-main1 min-h-16 flex justify-center items-center shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <Compass className="h-8 w-8 text-light6" />
-            <span className="text-light6 text-xl font-bold">VisionIas</span>
+          <div className="flex items-center space-x-2 h-5">
+            <img src={logo} className="invert h-10" alt="logo" />
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMobileMenu}
-            className="lg:hidden text-light6 hover:text-light6 transition-colors"
+            className="xl:hidden text-light6 hover:text-light6 transition-colors"
           >
             {isMobileMenuOpen ? (
               <X className="h-6 w-6" />
@@ -95,7 +107,22 @@ const Navbar = () => {
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6">
+          <div className="hidden xl:flex items-center space-x-4">
+            {Object.entries(NavLinks).map(([key, link]) => (
+              <Link
+                key={key}
+                to={link}
+                className="flex items-center space-x-1 text-light6 hover:text-light6 transition-colors"
+              >
+                <span>{key}</span>
+              </Link>
+            ))}
+            <Link
+              to="/#about-us"
+              className="flex items-center space-x-1 text-light6 hover:text-light6 transition-colors"
+            >
+              <span>About Us</span>
+            </Link>
             {/* Dropdowns */}
             {Object.entries(dropdowns).map(([key, dropdown]) => (
               <div key={key} className="relative">
@@ -114,7 +141,7 @@ const Navbar = () => {
                     onMouseLeave={() => handleMouseLeave(key)}
                     className="absolute top-full left-0  w-48 bg-main1 rounded-md shadow-lg py-1 z-50"
                   >
-                    {dropdown.links.map((link, index) => (
+                    {dropdown?.links.map((link, index) => (
                       <a
                         key={index}
                         href={link.href}
@@ -130,17 +157,11 @@ const Navbar = () => {
 
             {/* Regular Buttons */}
             <div className="flex items-center space-x-4">
-              <button className="text-light6 hover:text-light6 transition-colors">
-                <Home className="h-5 w-5" />
+              <button className="text-light6 hover:text-light6 transition-colors p-2">
+                Signin
               </button>
-              <button className="text-light6 hover:text-light6 transition-colors">
-                <Search className="h-5 w-5" />
-              </button>
-              <button className="text-light6 hover:text-light6 transition-colors">
-                <Bell className="h-5 w-5" />
-              </button>
-              <button className="text-light6 hover:text-light6 transition-colors">
-                <Settings className="h-5 w-5" />
+              <button className="text-light6 hover:text-light6 transition-colors p-2">
+                Signup
               </button>
             </div>
           </div>
@@ -148,13 +169,13 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4">
+          <div className="xl:hidden mt-4">
             {/* Mobile Dropdowns */}
             {Object.entries(dropdowns).map(([key, dropdown]) => (
               <div key={key} className="py-2">
                 <button
                   onClick={() => toggleMobileDropdown(key)}
-                  className="w-full flex items-center justify-between text-light6 hover:text-light6 transition-colors py-2"
+                  className="w-full flex items-center justify-between text-light6 hover:text-light6 transition-colors py-1"
                 >
                   <span className="text-light6">{dropdown.label}</span>
                   <ChevronDown
@@ -181,18 +202,24 @@ const Navbar = () => {
             ))}
 
             {/* Mobile Buttons */}
+            {Object.entries(NavLinks).map(([key, link]) => (
+              <Link
+                key={key}
+                to={link}
+                className="flex items-center justify-center text-xl w-full my-2 border-t-[1px] space-x-1 text-light6 hover:text-light6 transition-colors"
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                }}
+              >
+                <span>{key}</span>
+              </Link>
+            ))}
             <div className="flex justify-around py-4 border-t border-gray-200 mt-2">
               <button className="text-light6 hover:text-light6 transition-colors p-2">
-                <Home className="h-6 w-6" />
+                Signin
               </button>
               <button className="text-light6 hover:text-light6 transition-colors p-2">
-                <Search className="h-6 w-6" />
-              </button>
-              <button className="text-light6 hover:text-light6 transition-colors p-2">
-                <Bell className="h-6 w-6" />
-              </button>
-              <button className="text-light6 hover:text-light6 transition-colors p-2">
-                <Settings className="h-6 w-6" />
+                Signup
               </button>
             </div>
           </div>
