@@ -56,6 +56,12 @@ const Academy = () => {
   const [gmap, setgmap] = useState('https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3086.065753800146!2d70.766257!3d22.287752999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjLCsDE3JzE1LjkiTiA3MMKwNDUnNTguNSJF!5e1!3m2!1sen!2sin!4v1737452148087!5m2!1sen!2sin');
   return (
     <>
+      <div className=' bg-main2 p-5 px-[15%] border border-none  my-10'>
+        <p>
+          WORLD INBOX ACADEMY, established in 2012. 9 More branches apart from Bhavnagar i.e Gandhinagar, Himmatnagar, Mehsana, Ahmedabad, Surendranagar, Rajkot, Anand, Junagadh and Godhara. We are rooting deeper with experience and excellence. The academy took its students’ performance and results as the merit to success. Exactitude of getting through in any exams without distractions dispersing in the surroundings is exceptionally & immensely emphasized here. Precision behind every aspect (from classroom activities, material, tests, faculties to other areas off the class) of organization to fetch the result is what something people drop in for. Well disciplined working climate and trained human resource proves to be icing on the cake.
+        </p>
+      </div>
+
       <div className='flex flex-col md:flex-row  my-5 px-[5%]'>
         <div className=' xl:h-[80vh] xl:overflow-y-scroll xl:scrollbar-none '>
           <h1 className='text-3xl mb-3 font-extrabold flex justify-center'>Our Locations</h1>
@@ -74,7 +80,7 @@ const Academy = () => {
                       {item.location}
                     </p>
                     <p className="text-white-100  mb-4">
-                        <p className='font-bold'> Phone Numbers:</p>
+                      <p className='font-bold'> Phone Numbers:</p>
                       <ul className="list-disc ml-2">
 
                         {item.tel.map((tt) => {
@@ -85,9 +91,9 @@ const Academy = () => {
                       </ul>
                     </p>
                     <button className=" items-end bg-purple-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                    onClick={()=>{
-                      setgmap(item.maplocation)
-                    }}
+                      onClick={() => {
+                        setgmap(item.maplocation)
+                      }}
                     >
                       view in map
                     </button>
@@ -104,11 +110,7 @@ const Academy = () => {
         </div>
       </div>
 
-      <div className='m-6 bg-main4 p-5 border border-none rounded-md'>
-        <p>
-        WORLD INBOX ACADEMY, established in 2012. 9 More branches apart from Bhavnagar i.e Gandhinagar, Himmatnagar, Mehsana, Ahmedabad, Surendranagar, Rajkot, Anand, Junagadh and Godhara. We are rooting deeper with experience and excellence. The academy took its students’ performance and results as the merit to success. Exactitude of getting through in any exams without distractions dispersing in the surroundings is exceptionally & immensely emphasized here. Precision behind every aspect (from classroom activities, material, tests, faculties to other areas off the class) of organization to fetch the result is what something people drop in for. Well disciplined working climate and trained human resource proves to be icing on the cake.
-        </p>
-      </div>
+
     </>
   )
 }
