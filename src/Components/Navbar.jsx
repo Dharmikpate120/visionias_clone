@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import {
-  Compass,
   ChevronDown,
-  Home,
-  Search,
-  Bell,
-  Settings,
   Menu,
   X,
 } from "lucide-react";
