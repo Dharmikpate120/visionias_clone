@@ -11,6 +11,7 @@ import Events from "./Pages/Events";
 import Blogs from "./Pages/Blogs";
 import Career from "./Pages/Career";
 import ContactUs from "./Pages/ContactUs";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route path="/contact-us" element={<ContactUs />}></Route>
           </Routes>
         </div>
+        <Footer />
       </BrowserRouter>
     </>
   );
