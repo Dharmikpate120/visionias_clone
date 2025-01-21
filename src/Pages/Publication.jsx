@@ -86,9 +86,9 @@ const Publication = () => {
         </div>
       </div>
       <div className="grid sm:grid-cols-2 sm:px-5 md:px-10 lg:grid-cols-3 xl:grid-cols-4 place-items-center gap-8 my-10">
-        {books.map((book) => {
+        {books.map((book , index) => {
           return (
-            <div className="bg-main3 p-4 rounded-xl hover:shadow-custom-big-light transition-all duration-200 ease-linear hover:bg-main2">
+            <div key={index} className="bg-main3 p-4 rounded-xl hover:shadow-custom-big-light transition-all duration-200 ease-linear hover:bg-main2">
               <img className="h-[23rem]" src={book.imageUrl} alt="" />
               <div className="text-light1 text-xl">{book.name}</div>
               <div className="text-gray-400 text-sm">{book.publisher}</div>
