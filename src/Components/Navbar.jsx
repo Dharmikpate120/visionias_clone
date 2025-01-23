@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import {
-  ChevronDown,
-  Menu,
-  X,
-} from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import logo from "../assets/images/logo.png";
 import { Link } from "react-router-dom";
 
@@ -82,7 +78,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-main1 min-h-16 flex justify-center items-center shadow-md">
+    <nav className="bg-transparent z-10 fixed w-full backdrop-blur-lg top-0 left-0 min-h-16 flex justify-center items-center shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 h-5">

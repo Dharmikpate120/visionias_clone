@@ -12,8 +12,8 @@ import logo from "../assets/images/logo.png";
 import { Link } from "react-router-dom";
 const Footer = () => {
   return (
-    <footer className="bg-main2 md:bg-transparent text-white md:h-[500px] my-8 relative">
-      <div className="hidden md:inline absolute top-0 left-0  -z-1 overflow-hidden w-full bg-main1">
+    <footer className="bg-main2 md:bg-transparent text-white mt-20 md:mt-0 md:h-[500px] relative">
+      <div className="hidden md:inline absolute top-0 left-0  -z-1 overflow-hidden w-full bg-transparent">
         <svg
           className="absolute"
           id="visual"

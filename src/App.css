@@ -1,1 +1,62 @@
-body{color:rgba(44, 44, 44, 0.429)}
+* {
+  font-family: "Noto Sans", serif;
+  font-optical-sizing: auto;
+  box-sizing: border-box;
+}
+body {
+  background-image: linear-gradient(to right, hsl(0, 0%, 33%), hsl(0, 0%, 10%));
+}
+@property --property-name {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 15deg;
+}
+
+@keyframes animate1 {
+  0% {
+    --property-name: 0deg;
+  }
+  10% {
+    --property-name: 45deg;
+  }
+  40% {
+    --property-name: 135deg;
+  }
+  50% {
+    --property-name: 180deg;
+  }
+  60% {
+    --property-name: 225deg;
+  }
+  90% {
+    --property-name: 315deg;
+  }
+  100% {
+    --property-name: 360deg;
+  }
+}
+
+#grad1 {
+  background: black;
+  border-radius: 7px;
+  position: relative;
+  /* display:none; */
+}
+#grad1:hover:after {
+  filter: hue-rotate(var(--property-name)) blur(5px);
+}
+#grad1::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+
+  background-image: repeating-conic-gradient(
+    from var(--property-name),
+    rgb(171, 171, 171) 0%,
+    rgb(0, 0, 0) 25%
+    ,rgb(171, 171, 171) 50%
+  );
+  border-radius: 7px;
+  animation: animate1 20s linear infinite;
+}

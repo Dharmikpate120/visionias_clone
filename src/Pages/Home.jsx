@@ -1,8 +1,162 @@
 import React from "react";
 import ClassRoom from "../Components/ClassRoom";
 import ImageCarousel from "../Components/ImageCarousel";
+import whiteInbox from "../assets/images/white-logopng.png";
+import academy from "../assets/images/inbox-academy.png";
+import books from "../assets/images/inbox-books.png";
+import magazine from "../assets/images/inbox-magazine.png";
+import defaultBook from "../assets/images/defaultBook.jpg";
+import { Link } from "react-router-dom";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 function Home() {
+  const ourFocus = [
+    {
+      title: "World inbox Digital Application",
+      content:
+        "Welcome to World Inbox My Class, The oldest and experience application of Gujarat. We",
+      image: whiteInbox,
+      pageLink: "/",
+    },
+    {
+      title: "World inbox Digital Application",
+      content:
+        "Welcome to World Inbox My Class, The oldest and experience application of Gujarat. We",
+      image: academy,
+      pageLink: "/",
+    },
+    {
+      title: "World inbox Digital Application",
+      content:
+        "Welcome to World Inbox My Class, The oldest and experience application of Gujarat. We",
+      image: books,
+      pageLink: "/",
+    },
+    {
+      title: "World inbox Digital Application",
+      content:
+        "Welcome to World Inbox My Class, The oldest and experience application of Gujarat. We",
+      image: magazine,
+      pageLink: "/",
+    },
+  ];
+  const blogs = [
+    {
+      title: "default book",
+      img: defaultBook,
+      description: "this is a very great book to read",
+      link: "/",
+    },
+    {
+      title: "default book",
+      img: defaultBook,
+      description: "this is a very great book to read",
+      link: "/",
+    },
+    {
+      title: "default book",
+      img: defaultBook,
+      description: "this is a very great book to read",
+      link: "/",
+    },
+    {
+      title: "default book",
+      img: defaultBook,
+      description: "this is a very great book to read",
+      link: "/",
+    },
+  ];
+  // const stringIndents = (...values) => {
+  //   console.log(values);
+  // };
+  // const sI = stringIndents(`hello world`, `hello world`);
+  // sI("hello world");
+  return (
+    <>
+      <div className="lg:h-[40rem] lg:flex lg:justify-center lg:items-center lg:w-full">
+        <div className="lg:z-[1] h-fit">
+          <div className=" text-light1 pt-14 px-5 lg:py-0 lg:px-0 flex flex-col place-items-center gap-5  ">
+            <h1 className="font-bold text-center flex-col flex gap-5">
+              <div className="text-2xl lg:text-3xl">
+                Asisting thousands of students through competitive exams.
+              </div>
+              <div className="text-xl lg:text-2xl">
+                Check out our application Now!
+              </div>
+            </h1>
+            <button
+              id="grad1"
+              className="w-fit text-md px-4 py-1 lg:px-10 lg:text-lg"
+            >
+              Mobile App
+            </button>
+          </div>
+        </div>
+        <div className="p-8 grid  grid-cols-1 gap-10 lg:absolute lg:top-0 lg:left-0 lg:h-[40rem] lg:w-full lg:p-0 ">
+          {ourFocus.map(({ title, content, image, pageLink }, index) => {
+            return (
+              <div
+                key={index}
+                className={`group lg:rounded-xl lg:px-3 lg:py-3 lg:hover:z-[2] lg:hover:border-[2px]  lg:backdrop-blur-md lg:min-w-56  lg:max-w-56  lg:w-fit lg:absolute mt-16 flex  gap-5 items-center justify-end ${
+                  index % 2 === 0 ? "" : "flex-row-reverse"
+                } lg:flex-col ${index === 0 ? "top-12 left-48" : ""} ${
+                  index === 1 ? "top-12 right-48" : ""
+                } ${index === 2 ? "top-[55%] left-64" : ""} ${
+                  index === 3 ? "top-[55%] right-64" : ""
+                }`}
+              >
+                <div className="bg-light1  w-fit aspect-square flex items-center rounded-full p-5 shadow-custom-light ">
+                  <img className="min-w-20 invert" src={image} alt="" />
+                </div>
+                <div className="lg:hidden group-hover:inline">
+                  <div className="text-xl text-light2">{title}</div>
+                  <div className=" text-sm">{content}...</div>
+                  <Link to={pageLink}>Read More</Link>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <div>
+        <div
+          className="w-[85%] mx-auto flex justify-center items-center my-10"
+          id="grad1"
+        >
+          <Carousel
+            dynamicHeight={true}
+            autoPlay
+            infiniteLoop
+            showThumbs={false}
+            showArrows={false}
+            showStatus={false}
+            className=" py-5 bg-main2 border-2 -m-2 rounded-md lg:m-0 lg:border-none lg:border-inherit hover:shadow-none"
+          >
+            {/* rgba(0, 0, 0, 0.426) */}
+            {blogs.map(({ title, img, description, link }, index) => {
+              return (
+                <div
+                  key={index}
+                  className="px-5 relative flex justify-center items-center"
+                >
+                  <div className="w-[80%] h-fit flex place-items-center">
+                    <img className="object-contain rounded-lg" src={img} />
+                  </div>
+                  {/* <div className="w- flex flex-col justify-start items-start px-5">
+                    <div className="text-2xl">{title}</div>
+                    <div className="text-xl">{description}</div>
+                  </div> */}
+                </div>
+              );
+            })}
+          </Carousel>
+        </div>
+      </div>
+    </>
+  );
+}
+function OldHome() {
   return (
     <>
       <div className="container flex justify-center items-center min-w-full">

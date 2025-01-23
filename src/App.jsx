@@ -18,7 +18,7 @@ function App() {
     <>
       <BrowserRouter>
         <Navbar />
-        <div className="min-h-screen bg-main1 text-light6">
+        <div className="min-h-screen mt-16 font-sans text-light6">
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/publication" element={<Publication />}></Route>

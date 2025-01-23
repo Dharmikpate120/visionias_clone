@@ -13,6 +13,12 @@ module.exports = {
         main4: "#606260",
         main5: "#797a79",
         main6: "#929392",
+        light1: "#fff0db",
+        light2: "#fff2df",
+        light3: "#fff3e3",
+        light4: "#fff5e7",
+        light5: "#fff7eb",
+        light6: "#fff",
       },
       textColor: {
         ...({ theme }) => theme("colors"),
@@ -22,6 +28,12 @@ module.exports = {
         light4: "#fff5e7",
         light5: "#fff7eb",
         light6: "#fff",
+        main1: "#1e201e",
+        main2: "#333533",
+        main3: "#494b49",
+        main4: "#606260",
+        main5: "#797a79",
+        main6: "#929392",
       },
       scrollbar: {
         DEFAULT: {
